@@ -58,11 +58,12 @@ function saveCountryFile(){
     // saveCountryFile() doesn't run until after we switch to the first country... 
     // which means the for loop inside it which adds those keys to cobj never runs 
     // so I put this forloop above all the functions so it runs
-    // for (var i = 0; i < filterNames.length; i++) {
-    //     var key = filterNames[i];
-    //     cobj[key] = [];
-
-    // }
+    
+    // NOTE: but also u still need this here so that it re-runs evertime u start a new country
+    for (var i = 0; i < filterNames.length; i++) {
+        var key = filterNames[i];
+        cobj[key] = [];
+    }
 
 
 
