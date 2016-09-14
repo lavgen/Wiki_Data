@@ -29,17 +29,19 @@ var filterNames = [
     "DNC Email Archive",
     "Sony Emails",
     "Non-collection Publications"];
-//filterNumbers to identift the filter in url
+//filterNumbers to identify the filter in url
 var filterNumbers = [6,2,3,4,30,10,24,13,42,5,8,36,37,26,20,27,14,45,28,1];
-
+console.log("Length is" + filterNames.length);
 //iterator for country names
 var c = 0;
+//for testing purposes if you do this you can start from the second last filter etc
+// var f = filterNames.length-1;
 //iterator for filterNumbers
 var f = 0;
 //iterator for page number
 var page = 1;
 //add each filtername as an array to empty object we created
-for (var i = 0; i < filterNames.length-1; i++) {
+for (var i = 0; i < filterNames.length; i++) {
     var key = filterNames[i];
     cobj[key] = [];
 
@@ -75,7 +77,7 @@ function wikireq(){
     var url = "https://search.wikileaks.org/advanced?new_search=False&query=&exclude_words=&document_date_end=&exact_phrase=&released_date_end=&any_of="+countries[c]+"&document_date_start=&page="+page+"&order_by=most_relevant&released_date_start=&publication_type%5B%5D="+filterNumbers[f];
     //assign filter names to key variable 
     var key = filterNames[f];
-
+    console.log(f);
     //outputs undefined for cobj[key]
     // console.log(cobj[key]);
     console.log(countries[c],filterNames[f],page);
@@ -108,13 +110,12 @@ function wikireq(){
         page++;
         if( page > 50 ){
             page = 1;
-
-
             f++
-            if( f > filterNames.length ){
+            //we put equal there bc length is 20 and once it hits 20 f is equal to filternames.length so it goes to the next country
+            if( f >= filterNames.length ){
                 f = 0;
-                c++;
                 saveCountryFile();
+                c++;
             }
         }
 
