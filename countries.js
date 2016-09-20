@@ -190,7 +190,7 @@ module.exports = [
 	"Uzbekistan",
 	"Vanuatu",
 	"Venezuela",
-	"Viet Nam",
+	"Vietnam",
 	"Yemen",
 	"Zambia",
 	"Zimbabwe"
