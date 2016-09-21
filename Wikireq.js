@@ -33,7 +33,7 @@ var filterNames = [
 var filterNumbers = [6,2,3,4,30,10,24,13,42,5,8,36,37,26,20,27,14,45,28,1];
 console.log("Length is" + filterNames.length);
 //iterator for country names
-var c = 0;
+var c = 10;
 //for testing purposes if you do this you can start from the second last filter etc
 // var f = filterNames.length-1;
 //iterator for filterNumbers
